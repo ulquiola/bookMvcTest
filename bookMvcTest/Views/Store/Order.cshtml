@@ -1,0 +1,29 @@
+﻿<table >
+    <tr>
+        <th>作者</th>
+        <th>书名</th>
+        <th>价格</th>
+        <th>封面</th>
+    </tr>
+    <tr>
+        <th>@ViewBag.AuthorName</th>
+        <th>@ViewBag.Title</th>
+        <th>@ViewBag.Price</th>
+        <th><img alt="封面" src="@ViewBag.BookCoverUrl" width=" 100" height=" 100" /></th>
+    </tr>
+</table>
+@using (Html.BeginForm("Order", "Store", FormMethod.Post))
+{
+    @Html.Label("BookId", "书籍编号")
+    @Html.TextBox("BookId", ViewData["BookId"])
+    <br />
+    @Html.Label("Num", "数量")
+    @Html.TextBox("Num")
+    <br />
+    @Html.Label("Address", "地址")
+    @Html.TextBox("Address")
+    <br />
+    <input type="submit" value="提交" />
+}
+
+
